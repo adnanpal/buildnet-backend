@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "votes": {
+      "type": "integer"
+    },
+    "comments": {
+      "type": "integer"
+    },
+    "views": {
+      "type": "integer"
+    },
+    "seeking": {
+      "type": "json"
+    },
+    "statuss": {
+      "type": "string"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "posts"
+    },
+    "description": {
+      "type": "text"
+    },
+    "authorClerkId": {
+      "type": "string"
+    }
+  }
+}
