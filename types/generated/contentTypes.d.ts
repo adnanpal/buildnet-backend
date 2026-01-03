@@ -495,6 +495,7 @@ export interface ApiAppUserAppUser extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     publishedAt: Schema.Attribute.DateTime;
     receivedRequests: Schema.Attribute.Relation<
       'oneToMany',
@@ -619,6 +620,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    app_user: Schema.Attribute.Relation<'manyToOne', 'api::app-user.app-user'>;
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     authorClerkId: Schema.Attribute.String;
     category: Schema.Attribute.String;

@@ -37,6 +37,12 @@
       "relation": "oneToMany",
       "target": "api::author.author",
       "mappedBy": "user"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "app_user"
     }
   }
 }
