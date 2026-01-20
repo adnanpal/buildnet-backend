@@ -479,7 +479,9 @@ export interface ApiAppUserAppUser extends Struct.CollectionTypeSchema {
   };
   attributes: {
     authors: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
-    clerkUserId: Schema.Attribute.String;
+    clerkUserId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     connection_requests: Schema.Attribute.Relation<
       'oneToMany',
       'api::connection-request.connection-request'

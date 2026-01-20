@@ -12,7 +12,9 @@
   "pluginOptions": {},
   "attributes": {
     "clerkUserId": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "email": {
       "type": "string"
