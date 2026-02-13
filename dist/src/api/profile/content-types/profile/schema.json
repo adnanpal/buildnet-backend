@@ -1,0 +1,57 @@
+{
+    "kind": "collectionType",
+    "collectionName": "profiles",
+    "info": {
+        "singularName": "profile",
+        "pluralName": "profiles",
+        "displayName": "profile"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "fullname": {
+            "type": "string"
+        },
+        "degree": {
+            "type": "enumeration",
+            "enum": [
+                "BSC_CS",
+                "BTECH_CSE",
+                "BTECH_IT",
+                "BE_CS",
+                "MSC_CS",
+                "MTECH_CSE"
+            ]
+        },
+        "collegename": {
+            "type": "string"
+        },
+        "yearofstudy": {
+            "type": "enumeration",
+            "enum": [
+                "FIRST_YEAR",
+                "SECOND_YEAR",
+                "THIRD_YEAR",
+                "FOURTH_YEAR",
+                "GRADUATE",
+                "POSTGRADUATE"
+            ]
+        },
+        "levelofexperience": {
+            "type": "enumeration",
+            "enum": [
+                "Beginner",
+                "Intermediate",
+                "Advanced"
+            ]
+        },
+        "author": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::author.author",
+            "mappedBy": "profile"
+        }
+    }
+}

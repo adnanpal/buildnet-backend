@@ -1,0 +1,35 @@
+{
+    "kind": "collectionType",
+    "collectionName": "connection_requests",
+    "info": {
+        "singularName": "connection-request",
+        "pluralName": "connection-requests",
+        "displayName": "connection-request"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "connectionStatus": {
+            "type": "enumeration",
+            "enum": [
+                "pending",
+                "accepted",
+                "rejected"
+            ]
+        },
+        "fromUser": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::app-user.app-user",
+            "inversedBy": "connection_requests"
+        },
+        "toUser": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::app-user.app-user",
+            "inversedBy": "receivedRequests"
+        }
+    }
+}

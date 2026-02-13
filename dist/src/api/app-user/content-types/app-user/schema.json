@@ -1,0 +1,50 @@
+{
+    "kind": "collectionType",
+    "collectionName": "app_users",
+    "info": {
+        "singularName": "app-user",
+        "pluralName": "app-users",
+        "displayName": "app-user"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "clerkUserId": {
+            "type": "string",
+            "required": true,
+            "unique": true
+        },
+        "email": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "connection_requests": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::connection-request.connection-request",
+            "mappedBy": "fromUser"
+        },
+        "receivedRequests": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::connection-request.connection-request",
+            "mappedBy": "toUser"
+        },
+        "authors": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::author.author",
+            "mappedBy": "user"
+        },
+        "posts": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::post.post",
+            "mappedBy": "app_user"
+        }
+    }
+}
